@@ -1,14 +1,14 @@
 <div class="student-info">
     <h1 class="title"><?= __('Student Form') ?></h1>
-    <form class="form" action="" method="post">
+    <form id="student_info" class="form" action="" method="post">
         <fieldset class="fieldset">
             <div class="field">
                 <label class="label"><?= __('First Name') ?></label>
-                <input type="text" class="input-text" name="sfirstname">
+                <input type="text" class="input-text required-entry" name="fname">
             </div>
             <div class="field">
                 <label class="label"><?= __('Last Name') ?></label>
-                <input type="text" class="input-text" name="slastname">
+                <input type="text" class="input-text required-entry" name="lname">
             </div>
         </fieldset>
         <div class="actions-toolbar">
@@ -20,3 +20,21 @@
         </div>
     </form>
 </div>
+<table class="student-list">
+    <tr>
+        <th><?= __('First Name') ?></th>
+        <th><?= __('Last Name') ?></th>
+    </tr>
+    <tr>
+        <td>Vikram</td>
+        <td>Kumar</td>
+    </tr>
+</table>
+
+<script type="text/x-magento-init">
+    {
+        "#student_info": {
+            "validation": {}
+        }
+    }
+</script>
