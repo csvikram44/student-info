@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var $block CsVikram\StudentInfo\Block\Student;
+ */
+$items = $block->getStudentList();
+?>
+
 <div class="student-info">
     <h1 class="title"><?= __('Student Form') ?></h1>
     <form id="student_info" class="form" action="" method="post">
@@ -25,10 +32,13 @@
         <th><?= __('First Name') ?></th>
         <th><?= __('Last Name') ?></th>
     </tr>
+    <?php foreach ($items as $item):?>
     <tr>
-        <td>Vikram</td>
-        <td>Kumar</td>
+        <td><?= $item->getData('fname'); ?></td>
+        <td><?= $item->getData('lname'); ?></td>
     </tr>
+    <?php endforeach;?>
+
 </table>
 
 <script type="text/x-magento-init">
