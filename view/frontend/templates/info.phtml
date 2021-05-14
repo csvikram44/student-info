@@ -2,12 +2,13 @@
 /**
  * @var $block CsVikram\StudentInfo\Block\Student;
  */
+
 $items = $block->getStudentList();
 ?>
 
 <div class="student-info">
     <h1 class="title"><?= __('Student Form') ?></h1>
-    <form id="student_info" class="form" action="" method="post">
+    <form id="student_info" class="form" action="<?= $block->getUrl('student/index/save') ?>" method="post">
         <fieldset class="fieldset">
             <div class="field">
                 <label class="label"><?= __('First Name') ?></label>
@@ -27,6 +28,7 @@ $items = $block->getStudentList();
         </div>
     </form>
 </div>
+
 <table class="student-list">
     <tr>
         <th><?= __('First Name') ?></th>
